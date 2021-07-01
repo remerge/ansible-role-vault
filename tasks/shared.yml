@@ -53,7 +53,7 @@
   ansible.builtin.command:
     cmd: vault status -format=yaml
   environment:
-     VAULT_SKIP_VERIFY: "TRUE"
+    VAULT_ADDR: "{{ vault_api_addr }}"
   register: vault_status_raw
   changed_when: no
   check_mode: no
