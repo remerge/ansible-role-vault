@@ -3,7 +3,7 @@
   block:
     - name: join follower to leader
       ansible.builtin.command:
-        cmd: vault operator raft join https://{{ vault_leader }}:8200 
+        cmd: vault operator raft join http://{{ vault_leader }}:8200 
       changed_when: no
       register: vault_join_member_to_leader
       until:
