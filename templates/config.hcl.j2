@@ -42,14 +42,13 @@ disable_mlock      = {{ vault_disable_mlock }}
 disable_clustering = "{{ vault_disable_clustering }}"
 plugin_directory   = "{{ vault_plugin_directory }}"
 ui                 = {{ vault_ui }}
-
 {% if vault_license is defined %}
 license_path       = "/etc/vault.d/vault.hclic"
 {% endif %}
 log_level          = "{{ vault_log_level }}"
 
 service_registration "consul" {
-  address      = "127.0.0.1:8500"
+  address         = "127.0.0.1:8500"
   tls_skip_verify = "true"
 }
 
